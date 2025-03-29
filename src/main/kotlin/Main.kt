@@ -12,7 +12,7 @@ fun App() {
     var forecast by remember { mutableStateOf<List<String>>(emptyList()) }
 
     LaunchedEffect(Unit) {
-        val weather = WeatherService.getWeatherForecast()
+        val weather = WeatherService.getForecast("Halifax")
         forecast = weather.daily.take(5).map {
             val desc = it.weather.firstOrNull()?.description ?: "sem dados"
             "Dia: ${it.dt} | ${desc.capitalize()} | Min: ${it.temp.min}°C, Max: ${it.temp.max}°C"

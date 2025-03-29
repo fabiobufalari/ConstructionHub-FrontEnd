@@ -22,6 +22,10 @@ import kotlinx.coroutines.withContext
 import java.time.LocalDate
 import java.time.format.TextStyle
 import java.util.*
+import com.constructionhub.frontend.service.WeatherService.getCurrentWeather
+
+
+
 
 @Composable
 fun HomeScreen(onLogout: () -> Unit) {
